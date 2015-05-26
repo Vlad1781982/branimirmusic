@@ -1,0 +1,16 @@
+r\Remediation" valueName="Scan_ScheduleTime" presentation="$(presentation.Remediation_Scan_ScheduleTime)">
+            <parentCategory ref="Remediation" />
+            <supportedOn ref="windows:SUPPORTED_Windows8" />
+            <elements>
+                <decimal id="Remediation_Scan_ScheduleTime" valueName="Scan_ScheduleTime" minValue="0" maxValue="1440" />
+            </elements>
+        </policy>
+        <policy name="Reporting_AdditionalActionTimeout" class="Machine" displayName="$(string.Reporting_AdditionalActionTimeout)" explainText="$(string.Reporting_AdditionalActionTimeout_Explain)" key="Software\Policies\Microsoft\Windows Defender\Reporting" valueName="AdditionalActionTimeout" presentation="$(presentation.Reporting_AdditionalActionTimeout)">
+            <parentCategory ref="Reporting" />
+            <supportedOn ref="windows:SUPPORTED_Windows8" />
+            <elements>
+                <decimal id="Reporting_AdditionalActionTimeout" valueName="AdditionalActionTimeout" minValue="0" maxValue="4294967295" />
+            </elements>
+        </policy>
+        <policy name="Reporting_CriticalFailureTimeout" class="Machine" displayName="$(string.Reporting_CriticalFailureTimeout)" explainText="$(string.Reporting_CriticalFailureTimeout_Explain)" key="Software\Policies\Microsoft\Windows Defender\Reporting" valueName="CriticalFailureTimeout" presentation="$(presentation.Reporting_CriticalFailureTimeout)">
+            <parentCategory ref="

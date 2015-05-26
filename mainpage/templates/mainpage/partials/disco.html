@@ -1,0 +1,22 @@
+<h3>Дискография</h3>
+<style>
+   h3 {
+    font-family: Romul;
+   }
+</style>
+{% load staticfiles %}
+{% verbatim %}
+<div ng-repeat="album in albums|orderBy:'- datev'" id="album_div">
+    <div class="album_picture">
+       <a href="#/discography/{{ album.pk }}"><img class="animated fadeIn" src="/files/media/{{album.photo_thumb}}"></a>
+    </div>
+    <div class="album_content">
+       <div class="album_title">
+        {{ album.title }}
+       </div>
+       <div class="album_year">
+        {{ album.datev|date:'short' }}
+       </div>
+    </div>
+</div>
+{% endverbatim %}

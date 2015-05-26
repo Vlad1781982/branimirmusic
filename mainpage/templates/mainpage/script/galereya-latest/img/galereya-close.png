@@ -1,0 +1,106 @@
+ffset = (zip_uint64_t)off;
+
+    is_zip64 = 0;
+
+    for (i=0; i<survivors; i++) {
+	struct zip_entry *entry = za->entry+filelist[i].idx;
+
+	if ((ret=_zip_dirent_write(entry->changes ? entry->changes : entry->orig, fp, ZIP_FL_CENTRAL, &za->error)) < 0)
+	    return -1;
+	if (ret)
+	    is_zip64 = 1;
+    }
+
+    if ((off=ftello(fp)) < 0) {
+        _zip_error_set(&za->error, ZIP_ER_READ, errno);
+        return -1;
+    }
+    size = (zip_uint64_t)off - offset;
+
+    if (offset > ZIP_UINT32_MAX || survivors > ZIP_UINT16_MAX)
+	is_zip64 = 1;
+
+    if (is_zip64) {
+	fwrite(EOCD64_MAGIC, 1, 4, fp);
+	_zip_write8(EOCD64LEN-12, fp);
+	_zip_write2(45, fp);
+	_zip_write2(45, fp);
+	_zip_write4(0, fp);
+	_zip_write4(0, fp);
+	_zip_write8(survivors, fp);
+	_zip_write8(survivors, fp);
+	_zip_write8(size, fp);
+	_zip_write8(offset, fp);
+
+	fwrite(EOCD64LOC_MAGIC, 1, 4, fp);
+	_zip_write4(0, fp);
+	_zip_write8(offset+size, fp);
+	_zip_write4(1, fp);
+		    
+    }
+
+    /* clearerr(fp); */
+    fwrite(EOCD_MAGIC, 1, 4, fp);
+    _zip_write4(0, fp);
+    _zip_write2(survivors >= ZIP_UINT16_MAX ? ZIP_UINT16_MAX : (zip_uint16_t)survivors, fp);
+    _zip_write2(survivors >= ZIP_UINT16_MAX ? ZIP_UINT16_MAX : (zip_uint16_t)survivors, fp);
+    _zip_write4(size >= ZIP_UINT32_MAX ? ZIP_UINT32_MAX : (zip_uint32_t)size, fp);
+    _zip_write4(offset >= ZIP_UINT32_MAX ? ZIP_UINT32_MAX : (zip_uint32_t)offset, fp);
+
+    comment = za->comment_changed ? za->comment_changes : za->comment_orig;
+
+    _zip_write2(comment ? comment->length : 0, fp);
+    if (comment)
+	fwrite(comment->raw, 1, comment->length, fp);
+
+    if (ferror(fp)) {
+	_zip_error_set(&za->error, ZIP_ER_WRITE, errno);
+	return -1;
+    }
+
+    return (zip_int64_t)size;
+}
+
+
+
+struct zip_dirent *
+_zip_dirent_clone(const struct zip_dirent *sde)
+{
+    struct zip_dirent *tde;
+
+    if ((tde=(struct zip_dirent *)malloc(sizeof(*tde))) == NULL)
+	return NULL;
+
+    if (sde)
+	memcpy(tde, sde, sizeof(*sde));
+    else
+	_zip_dirent_init(tde);
+    
+    tde->changed = 0;
+    tde->cloned = 1;
+
+    return tde;
+}
+
+
+
+void
+_zip_dirent_finalize(struct zip_dirent *zde)
+{
+    if (!zde->cloned || zde->changed & ZIP_DIRENT_FILENAME)
+	_zip_string_free(zde->filename);
+    if (!zde->cloned || zde->changed & ZIP_DIRENT_EXTRA_FIELD)
+	_zip_ef_free(zde->extra_fields);
+    if (!zde->cloned || zde->changed & ZIP_DIRENT_COMMENT)
+	_zip_string_free(zde->comment);
+}
+
+
+
+void
+_zip_dirent_free(struct zip_dirent *zde)
+{
+    if (zde == NULL)
+	return;
+
+    _zip_dirent_f

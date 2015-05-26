@@ -1,0 +1,24 @@
+{% load staticfiles %}
+
+
+{% verbatim %}
+<div class="audio_album" ng-repeat="album in albums">
+<h3 >{{ album.title }}</h3>
+    <img reflection="" ng-src="/files/media/{{ album.photo }}"/>
+</div>
+<div ng-repeat="track in tracks" class="audio_wrapper">
+    <div class="audio_title">{{ track.file }}</div>
+    <div class="animated flipInX" audios code="track.file"></div>
+</div>
+{% endverbatim %}
+<style>
+    h3 {
+        font-family: Bezpredmetizm;
+    }
+   .audio_title {
+    font-family: Bezpredmetizm;
+   }
+</style>
+{% block ExtraJS %}
+    <script src="{% static 'mainpage/script/reflection.js' %}"></script>
+{% endblock %}

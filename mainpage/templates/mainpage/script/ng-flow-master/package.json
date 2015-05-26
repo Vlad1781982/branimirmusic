@@ -1,0 +1,21 @@
+R
+
+"**Examples**" CR CR
+"    $P frame 2" CR
+"    $P ev $count" CR
+"    Go to frame 2 and print out variable **$count** in that frame" CR CR
+
+"Note that this frame scope is discarded when execution continues, with the execution frame "
+"then reset to the lowest executiong frame."
+},
+
+{"info",
+"**info** commands provide quick access to various types of information about the PHP environment" CR
+"Specific info commands are show below:" CR CR
+
+"  **Target**   **Alias**  **Purpose**" CR
+"  **break**    **b**      show current breakpoints" CR
+"  **files**    **F**      show included files" CR
+"  **classes**  **c**      show loaded classes" CR
+"  **funcs**    **f**      show loaded classes" CR
+"  **error**    **e**      show last

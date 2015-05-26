@@ -1,0 +1,144 @@
+m_enc == ZIP_ENCODING_UTF8_KNOWN))
+	de->bitflags |= ZIP_GPBF_ENCODING_UTF_8;
+    else {
+	de->bitflags &= ~ZIP_GPBF_ENCODING_UTF_8;
+	if (name_enc == ZIP_ENCODING_UTF8_KNOWN) {
+	    ef = _zip_ef_utf8(ZIP_EF_UTF_8_NAME, de->filename, error);
+	    if (ef == NULL)
+		return -1;
+	}
+	if ((flags & ZIP_FL_LOCAL) == 0 && com_enc == ZIP_ENCODING_UTF8_KNOWN){
+	    struct zip_extra_field *ef2 = _zip_ef_utf8(ZIP_EF_UTF_8_COMMENT, de->comment, error);
+	    if (ef2 == NULL) {
+		_zip_ef_free(ef);
+		return -1;
+	    }
+	    ef2->next = ef;
+	    ef = ef2;
+	}
+    }
+
+    ef_zip64_p = ef_zip64;
+    if (flags & ZIP_FL_LOCAL) {
+	if ((flags & ZIP_FL_FORCE_ZIP64) || de->comp_size > ZIP_UINT32_MAX || de->uncomp_size > ZIP_UINT32_MAX) {
+	    _zip_poke8(de->uncomp_size, &ef_zip64_p);
+	    _zip_poke8(de->comp_size, &ef_zip64_p);
+	}
+    }
+    else {
+	if ((flags & ZIP_FL_FORCE_ZIP64) || de->comp_size > ZIP_UINT32_MAX || de->uncomp_size > ZIP_UINT32_MAX || de->offset > ZIP_UINT32_MAX) {
+	    if (de->comp_size >= ZIP_UINT32_MAX)
+		_zip_poke8(de->comp_size, &ef_zip64_p);
+	    if (de->uncomp_size >= ZIP_UINT32_MAX)
+		_zip_poke8(de->uncomp_size, &ef_zip64_p);
+	    if (de->offset >= ZIP_UINT32_MAX)
+		_zip_poke8(de->offset, &ef_zip64_p);
+	}
+    }
+
+    if (ef_zip64_p != ef_zip64) {
+	struct zip_extra_field *ef64 = _zip_ef_new(ZIP_EF_ZIP64, (zip_uint16_t)(ef_zip64_p-ef_zip64), ef_zip64, ZIP_EF_BOTH);
+	ef64->next = ef;
+	ef = ef64;
+	is_zip64 = 1;
+    }
+
+    if ((flags & (ZIP_FL_LOCAL|ZIP_FL_FORCE_ZIP64)) == (ZIP_FL_LOCAL|ZIP_FL_FORCE_ZIP64))
+	is_really_zip64 = _zip_dirent_needs_zip64(de, flags);
+    else
+	is_really_zip64 = is_zip64;
+    
+    if ((flags & ZIP_FL_LOCAL) == 0)
+	_zip_write2(is_really_zip64 ? 45 : de->version_madeby, fp);
+    _zip_write2(is_really_zip64 ? 45 : de->version_needed, fp);
+    _zip_write2(de->bitflags&0xfff9, fp); /* clear compression method specific flags */
+    _zip_write2((zip_uint16_t)de->comp_method, fp); /* TODO: can it be ZIP_CM_DEFAULT? */
+
+    _zip_u2d_time(de->last_mod, &dostime, &dosdate);
+    _zip_write2(dostime, fp);
+    _zip_write2(dosdate, fp);
+
+    _zip_write4(de->crc, fp);
+    if (de->comp_size < ZIP_UINT32_MAX)
+	_zip_write4((zip_uint32_t)de->comp_size, fp);
+    else
+	_zip_write4(ZIP_UINT32_MAX, fp);
+    if (de->uncomp_size < ZIP_UINT32_MAX)
+	_zip_write4((zip_uint32_t)de->uncomp_size, fp);
+    else
+	_zip_write4(ZIP_UINT32_MAX, fp);
+
+    _zip_write2(_zip_string_length(de->filename), fp);
+    _zip_write2(_zip_ef_size(de->extra_fields, flags) + _zip_ef_size(ef, ZIP_EF_BOTH), fp);
+    
+    if ((flags & ZIP_FL_LOCAL) == 0) {
+	_zip_write2(_zip_string_length(de->comment), fp);
+	_zip_write2((zip_uint16_t)de->disk_number, fp);
+	_zip_write2(de->int_attrib, fp);
+	_zip_write4(de->ext_attrib, fp);
+	if (de->offset < ZIP_UINT32_MAX)
+	    _zip_write4((zip_uint32_t)de->offset, fp);
+	else
+	    _zip_write4(ZIP_UINT32_MAX, fp);
+    }
+
+    if (de->filename)
+	_zip_string_write(de->filename, fp);
+
+    if (ef)
+	_zip_ef_write(ef, ZIP_EF_BOTH, fp);
+    if (de->extra_fields)
+	_zip_ef_write(de->extra_fields, flags, fp);
+
+    if ((flags & ZIP_FL_LOCAL) == 0) {
+	if (de->comment)
+	    _zip_string_write(de->comment, fp);
+    }
+
+    _zip_ef_free(ef);
+
+    if (ferror(fp)) {
+	_zip_error_set(error, ZIP_ER_WRITE, errno);
+	return -1;
+    }
+
+    return is_zip64;
+}
+
+
+
+static time_t
+_zip_d2u_time(zip_uint16_t dtime, zip_uint16_t ddate)
+{
+    struct tm tm;
+
+    memset(&tm, 0, sizeof(tm));
+    
+    /* let mktime decide if DST is in effect */
+    tm.tm_isdst = -1;
+    
+    tm.tm_year = ((ddate>>9)&127) + 1980 - 1900;
+    tm.tm_mon = ((ddate>>5)&15) - 1;
+    tm.tm_mday = ddate&31;
+
+    tm.tm_hour = (dtime>>11)&31;
+    tm.tm_min = (dtime>>5)&63;
+    tm.tm_sec = (dtime<<1)&62;
+
+    return mktime(&tm);
+}
+
+
+
+static struct zip_extra_field *
+_zip_ef_utf8(zip_uint16_t id, struct zip_string *str, struct zip_error *error)
+{
+    const zip_uint8_t *raw;
+    zip_uint8_t *data, *p;
+    zip_uint32_t len;
+    struct zip_extra_field *ef;
+
+    raw = _zip_string_get(str, &len, ZIP_FL_ENC_RAW, NULL);
+
+    if (len+5 > ZIP_UINT16_MAX) {
+        /* TODO: erro

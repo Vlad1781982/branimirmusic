@@ -1,0 +1,16 @@
+{% verbatim %}
+<div dir-paginate="item in news|itemsPerPage: pageSize" current-page="currentPage">
+    <div class="news_title" ng-bind-html="item.title"></div>
+    <div class="news_content" ng-bind-html="item.content"></div>
+        <div class="news_footer">{{ item.created|date:'short' }}</div>
+</div>
+        <style>
+   .news_title {
+    font-family: Romul;
+   }
+.news_footer {
+    font-family: Merriweather;
+}
+  </style>
+<dir-pagination-controls></dir-pagination-controls>
+{% endverbatim %}

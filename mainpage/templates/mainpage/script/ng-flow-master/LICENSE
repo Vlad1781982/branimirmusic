@@ -1,0 +1,34 @@
+ass::method#2" CR
+"    Break at the opline #2 of the method \\\\my\\\\class::method" CR CR
+
+"    $P break test.php:#3" CR
+"    $P b test.php:#3" CR
+"    Break at opline #3 in test.php" CR CR
+
+"    $P break if $cnt > 10" CR
+"    $P b if $cnt > 10" CR
+"    Break when the condition ($cnt > 10) evaluates to true" CR CR
+
+"    $P break at phpdbg::isGreat if $opt == 'S'" CR
+"    $P break @ phpdbg::isGreat if $opt == 'S'" CR
+"    Break at any opcode in phpdbg::isGreat when the condition ($opt == 'S') is true" CR CR
+
+"    $P break at test.php:20 if !isset($x)" CR
+"    Break at every opcode on line 20 of test.php when the condition evaluates to true" CR CR
+
+"    $P break ZEND_ADD" CR
+"    $P b ZEND_ADD" CR
+"    Break on any occurence of the opcode ZEND_ADD" CR CR
+
+"    $P break del 2" CR
+"    $P b ~ 2" CR
+"    Remove breakpoint 2" CR CR
+
+"Note: Conditional breaks are costly in terms of runtime overhead. Use them only when required "
+"as they significantly slow execution." CR CR
+
+"Note: An address is only valid for the current compilation."
+},
+
+{"clean",
+"Classes, constants

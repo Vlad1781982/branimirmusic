@@ -1,0 +1,11 @@
+
+{% verbatim %}
+<div ng-repeat="model in models">
+    <a ng-href="#/foto-video/{{model.pk}}">{{ model.title}}</a>
+</div>
+<h1>{{}}</h1>
+{% endverbatim %}
+{% for gallery in galleries %}
+<h1>{{gallery.title}}</h1>
+{% endfor %}
+<div ui-view></div>

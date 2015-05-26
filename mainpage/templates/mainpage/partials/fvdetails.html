@@ -1,0 +1,19 @@
+{% load staticfiles %}
+{% block CSS %}
+<link rel="stylesheet" href="{% static 'mainpage/script/galereya-latest/css/jquery.galereya.css' %}">
+<link rel="stylesheet" href="{% static 'mainpage/script/galereya-latest/css/jquery.galereya.ie.css' %}">
+{% endblock %}
+{% verbatim %}
+<div ng-app="myApp" >
+<h1 ng-repeat="foto in fotos">{{foto.file}}</h1></div>
+
+<div id="galleryherepls" galery="" ng-repeat="foto in fotos">
+    <img ng-src="/files/media/{{ foto.file}}"
+         alt="Image"
+         data-desc="Example"
+         data-fullsrc="/files/media/{{ foto.file }}"/>
+    </div>
+{% endverbatim %}
+{% block ExtraJS %}
+   <script src="{% static 'mainpage/script/galereya-latest/js/jquery.galereya.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,294 @@
+ Note: This task should not be batched, since it relies on having all the COM references fed into it at once.
+        -->
+    <PropertyGroup>
+      <ResolveComReferenceMSBuildArchitecture Condition="'$(ResolveComReferenceMSBuildArchitecture)' == ''">$(PlatformTargetAsMSBuildArchitecture)</ResolveComReferenceMSBuildArchitecture>
+      
+      <ResolveComReferenceToolPath Condition="'$(ResolveComReferenceToolPath)' == ''">$(TargetFrameworkSDKToolsDirectory)</ResolveComReferenceToolPath>
+      <ResolveComReferenceSilent Condition="'$(ResolveComReferenceSilent)' == ''">false</ResolveComReferenceSilent>
+    </PropertyGroup>
+    
+    <ResolveComReference
+          TypeLibNames="@(COMReference)"
+          TypeLibFiles="@(COMFileReference)"
+          ResolvedAssemblyReferences="@(ReferencePath)"
+          WrapperOutputDirectory="$(InteropOutputPath)"
+          IncludeVersionInInteropName="$(IncludeVersionInInteropName)"
+          KeyContainer="$(KeyContainerName)"
+          KeyFile="$(KeyOriginatorFile)"
+          DelaySign="$(DelaySign)"
+          StateFile="@(_ResolveComReferenceCache)"
+          TargetFrameworkVersion="$(TargetFrameworkVersion)"
+          TargetProcessorArchitecture="$(ProcessorArchitecture)"
+          NoClassMembers="$(ComReferenceNoClassMembers)"
+          Silent="$(ResolveComReferenceSilent)"
+          EnvironmentVariables="$(ResolveComReferenceEnvironment)"
+          SdkToolsPath="$(ResolveComReferenceToolPath)"
+          ExecuteAsTool="$(ComReferenceExecuteAsTool)"
+          MSBuildArchitecture="$(ResolveComReferenceMSBuildArchitecture)"
+          ContinueOnError="$(ContinueOnError)">
+
+      <Output TaskParameter="ResolvedFiles" ItemName="ReferencePath"/>
+      <Output TaskParameter="ResolvedFiles" ItemName="ComReferenceWrappers"/>
+      <Output TaskParameter="ResolvedFiles" ItemName="FileWrites"/>
+      <!-- This output list only includes items with Isolated attribute set to True.  It's done by the task itself. -->
+      <Output TaskParameter="ResolvedModules" ItemName="ResolvedIsolatedComModules"/>
+
+    </ResolveComReference>
+
+    <ItemGroup>
+      <FileWrites Include="@(_ResolveComReferenceCache)"/>
+      <ReferenceComWrappersToCopyLocal Include="@(ComReferenceWrappers)" Condition="'%(ComReferenceWrappers.CopyLocal)'!='false'"/>
+    </ItemGroup>
+
+  </Target>
+
+  <Target
+      Name="ResolveComReferencesDesignTime"
+      Returns="@(ComReferenceWrappers)"
+      DependsOnTargets="ResolveComReferences" />
+
+  <!--
+    ***********************************************************************************************
+    ***********************************************************************************************
+                                                                PrepareResources Section
+    ***********************************************************************************************
+    ***********************************************************************************************
+    -->
+
+  <!--
+    ============================================================
+                                        PrepareResources
+
+    Prepare resources for the Compile step.
+    ============================================================
+    -->
+  <PropertyGroup>
+    <PrepareResourcesDependsOn>
+      PrepareResourceNames;
+      ResGen;
+      CompileLicxFiles
+    </PrepareResourcesDependsOn>
+  </PropertyGroup>
+  <Target
+      Name="PrepareResources"
+      DependsOnTargets="$(PrepareResourcesDependsOn)"/>
+
+  <!--
+    ============================================================
+                                        PrepareResourceNames
+
+    Prepare the names of resource files.
+    ============================================================
+    -->
+  <PropertyGroup>
+    <PrepareResourceNamesDependsOn>
+      AssignTargetPaths;
+      SplitResourcesByCulture;
+      CreateManifestResourceNames;
+      CreateCustomManifestResourceNames
+    </PrepareResourceNamesDependsOn>
+  </PropertyGroup>
+  <Target
+      Name="PrepareResourceNames"
+      DependsOnTargets="$(PrepareResourceNamesDependsOn)"/>
+
+  <!--
+    ============================================================
+                                        AssignTargetPaths
+
+    This target creates <TargetPath> tags for items. <TargetPath> is a relative folder plus filename
+    for the destination of this item.
+    ============================================================
+    -->
+  <PropertyGroup>
+    <AssignTargetPathsDependsOn></AssignTargetPathsDependsOn>
+  </PropertyGroup>
+  <Target
+      Name="AssignTargetPaths"
+      DependsOnTargets="$(AssignTargetPathsDependsOn)">
+
+    <ItemGroup>
+      <_Temporary Remove="@(_Temporary)" />
+    </ItemGroup>
+
+    <!-- AssignTargetPath generates TargetPath metadata that is consumed by CreateManifestResourceNames target for manifest name generation -->
+    <AssignTargetPath Files="@(EmbeddedResource)" RootFolder="$(MSBuildProjectDirectory)">
+      <Output TaskParameter="AssignedFiles" ItemName="_Temporary" />
+    </AssignTargetPath>
+
+
+    <ItemGroup>
+      <!-- Replace items in EmbeddedResource with the items emitted by the AssignTargetPath task that have the TargetPath metadata -->
+      <EmbeddedResource Remove="@(_Temporary)" />
+      <EmbeddedResource Include="@(_Temporary)" />
+      <_Temporary Remove="@(_Temporary)" />
+    </ItemGroup>
+
+    <AssignTargetPath Files="@(Content)" RootFolder="$(MSBuildProjectDirectory)">
+      <Output TaskParameter="AssignedFiles" ItemName="ContentWithTargetPath" />
+    </AssignTargetPath>
+
+    <AssignTargetPath Files="@(None)" RootFolder="$(MSBuildProjectDirectory)">
+      <Output TaskParameter="AssignedFiles" ItemName="_NoneWithTargetPath" />
+    </AssignTargetPath>
+
+    <AssignTargetPath Files="@(BaseApplicationManifest)" RootFolder="$(MSBuildProjectDirectory)">
+      <Output TaskParameter="AssignedFiles" ItemName="_DeploymentBaseManifestWithTargetPath"/>
+    </AssignTargetPath>
+
+    <AssignTargetPath Files="@(None)" RootFolder="$(MSBuildProjectDirectory)" Condition="'@(_DeploymentBaseManifestWithTargetPath)'=='' and '%(None.Extension)'=='.manifest'">
+      <Output TaskParameter="AssignedFiles" ItemName="_DeploymentBaseManifestWithTargetPath" />
+    </AssignTargetPath>
+
+  </Target>
+
+  <!--
+    ============================================================
+                                        SplitResourcesByCulture
+
+    Split EmbeddedResource items into five lists based on whether
+    they are resx files, licx files or other resources and whether they should be localized. Also adds Type and Culture
+    metadata. Type indicates whether the resource is "Resx" or "Non-Resx".
+
+        [IN]/[OUT]
+        @(EmbeddedResource) - The raw list of resources.
+
+        [OUT]
+        @(_LicxFile) - The EmbeddedResource items with extension equal to '.licx'.
+    ============================================================
+    -->
+  <Target
+      Name="SplitResourcesByCulture"
+      DependsOnTargets="AssignTargetPaths">
+
+    <Warning Condition="'@(ResxWithNoCulture)'!=''" Code="MSB9000" Text="ResxWithNoCulture item type is deprecated. Use EmbeddedResource items instead."/>
+    <Warning Condition="'@(ResxWithCulture)'!=''" Code="MSB9001" Text="ResxWithCulture item type is deprecated. Use EmbeddedResource items instead."/>
+    <Warning Condition="'@(NonResxWithCulture)'!=''" Code="MSB9002" Text="NonResxWithCulture item type is deprecated. Use EmbeddedResource items instead."/>
+    <Warning Condition="'@(NonResxWithNoCulture)'!=''" Code="MSB9003" Text="NonResxWithNoCulture item type is deprecated. Use EmbeddedResource items instead."/>
+
+    <ItemGroup>
+      <_LicxFile Include="@(EmbeddedResource)" Condition="'%(Extension)'=='.licx'"/>
+
+      <!-- CONSUMED FOR COMPATIBILITY REASONS ONLY. EMIT EMBEDDEDRESOURCE INSTEAD -->
+      <EmbeddedResource Include="@(ResxWithNoCulture);@(ResxWithCulture)">
+        <Type>Resx</Type>
+      </EmbeddedResource>
+      <EmbeddedResource Include="@(NonResxWithCulture);@(NonResxWithNoCulture)">
+        <Type>Non-Resx</Type>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <AssignCulture Files="@(EmbeddedResource)" Condition="'%(Extension)'!='.licx'">
+      <!-- Create the list of culture resx and embedded resource files -->
+      <Output TaskParameter="AssignedFilesWithCulture" ItemName="_MixedResourceWithCulture"/>
+      <!-- Create the list of non-culture resx and embedded resource files -->
+      <Output TaskParameter="AssignedFilesWithNoCulture" ItemName="_MixedResourceWithNoCulture"/>
+    </AssignCulture>
+
+    <ItemGroup>
+
+      <!-- Remove EmbeddedResource items that we have processed already
+                 i.e. either Licx, or resources that don't have culture info -->
+      <EmbeddedResource Remove="@(_MixedResourceWithCulture)" />
+      <EmbeddedResource Remove="@(_MixedResourceWithNoCulture)" />
+      <EmbeddedResource Remove="@(_LicxFile)" />
+
+      <!-- Add back everything except Licx, so that we have culture info -->
+      <EmbeddedResource Include="@(_MixedResourceWithNoCulture);@(_MixedResourceWithCulture)" Condition="'%(Extension)'=='.resx' or '%(Extension)'=='.restext'">
+        <Type Condition="'%(_MixedResourceWithNoCulture.Type)'=='' and '%(_MixedResourceWithCulture.Type)'==''">Resx</Type>
+      </EmbeddedResource>
+      <EmbeddedResource Include="@(_MixedResourceWithNoCulture);@(_MixedResourceWithCulture)" Condition="'%(Extension)'!='.resx' and '%(Extension)'!='.restext'">
+        <Type Condition="'%(_MixedResourceWithNoCulture.Type)'=='' and '%(_MixedResourceWithCulture.Type)'==''">Non-Resx</Type>
+      </EmbeddedResource>
+
+      <!-- EMITTED FOR COMPATIBILITY REASONS ONLY. CONSUME EMBEDDEDRESOURCE INSTEAD -->
+      <ResxWithNoCulture Remove="@(ResxWithNoCulture)"/>
+      <NonResxWithNoCulture Remove="@(NonResxWithNoCulture)"/>
+      <ResxWithCulture Remove="@(ResxWithCulture)"/>
+      <NonResxWithCulture Remove="@(NonResxWithCulture)"/>
+      <ResxWithNoCulture Include="@(_MixedResourceWithNoCulture)" Condition="'%(WithCulture)'=='false' and ('%(Extension)'=='.resx' or '%(Extension)'=='.restext')"/>
+      <NonResxWithNoCulture Include="@(_MixedResourceWithNoCulture)" Condition="'%(WithCulture)'=='false' and ('%(Extension)'!='.resx' and '%(Extension)'!='.restext')"/>
+      <ResxWithCulture Include="@(_MixedResourceWithCulture)" Condition="'%(WithCulture)'=='true' and ('%(Extension)'=='.resx' or '%(Extension)'=='.restext')"/>
+      <NonResxWithCulture Include="@(_MixedResourceWithCulture)" Condition="'%(WithCulture)'=='true' and ('%(Extension)'!='.resx' and '%(Extension)'!='.restext')"/>
+
+      <!-- Clean up temporary lists -->
+      <_MixedResourceWithNoCulture Remove="@(_MixedResourceWithNoCulture)" />
+      <_MixedResourceWithCulture Remove="@(_MixedResourceWithCulture)" />
+
+    </ItemGroup>
+
+  </Target>
+
+  <!--
+    =======================================================================
+                                        CreateCustomManifestResourceNames
+
+    Allows custom manifest resource name generation tasks to plug
+    into the build process
+    =======================================================================
+    -->
+  <PropertyGroup>
+    <CreateCustomManifestResourceNamesDependsOn></CreateCustomManifestResourceNamesDependsOn>
+  </PropertyGroup>
+  <Target
+      Name="CreateCustomManifestResourceNames"
+      DependsOnTargets="$(CreateCustomManifestResourceNamesDependsOn)"/>
+
+  <!--
+    ============================================================
+                                        ResGen
+
+    Run GenerateResource on the given resx files.
+
+    ============================================================
+    -->
+  <PropertyGroup>
+    <ResGenDependsOn>ResolveAssemblyReferences;SplitResourcesByCulture;BeforeResGen;CoreResGen;AfterResGen</ResGenDependsOn>
+    <CoreResGenDependsOn></CoreResGenDependsOn>
+    <UseSourcePath Condition="'$(UseSourcePath)'==''">true</UseSourcePath>
+    <ResGenExecuteAsTool Condition="'$(ResGenExecuteAsTool)'==''">false</ResGenExecuteAsTool>
+  </PropertyGroup>
+  <Target
+      Name="ResGen"
+      DependsOnTargets="$(ResGenDependsOn)"/>
+
+  <!--
+    ============================================================
+                                        BeforeResGen
+
+    Redefine this target in your project in order to run tasks just before Resgen.
+    ============================================================
+    -->
+  <Target Name="BeforeResGen"/>
+
+  <!--
+    ============================================================
+                                        AfterResGen
+
+    Redefine this target in your project in order to run tasks just after Resgen.
+    ============================================================
+    -->
+  <Target Name="AfterResGen"/>
+
+  <!--
+    ============================================================
+                                        CoreResGen
+    ============================================================
+    -->
+  <Target
+      Name="CoreResGen"
+      DependsOnTargets="$(CoreResGenDependsOn)">
+
+    <ItemGroup>
+      <_Temporary Remove="@(_Temporary)" />
+    </ItemGroup>
+
+    <PropertyGroup>
+      <GenerateResourceMSBuildArchitecture Condition="'$(GenerateResourceMSBuildArchitecture)' == ''">$(PlatformTargetAsMSBuildArchitecture)</GenerateResourceMSBuildArchitecture>
+
+      <ResgenToolPath Condition="'$(ResgenToolPath)' == ''">$(TargetFrameworkSDKToolsDirectory)</ResgenToolPath>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(TargetFrameworkAsMSBuildRuntime)' != '' and '$(GenerateResourceMSBuildArchitecture)' != ''">
+      <!-- In the general case, we want to fail to run the task if the task host it's requesting doesn't exist, because we'd rather let the
+           user know there's something wrong than just silently generate something that's probably not quite right. However

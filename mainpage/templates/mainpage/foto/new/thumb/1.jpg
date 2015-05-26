@@ -1,0 +1,957 @@
+gs\Zones\3" valueName="2200">
+          <value>
+            <delete />
+          </value>
+        </item>
+        <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2201">
+          <value>
+            <delete />
+          </value>
+        </item>
+        <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2300">
+          <value>
+            <delete />
+          </value>
+        </item>
+        <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2301">
+          <value>
+            <delete />
+          </value>
+        </item>
+        <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2400">
+          <value>
+            <delete />
+          </value>
+        </item>
+        <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2401">
+          <value>
+            <delete />
+          </value>
+        </item>
+        <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2402">
+          <value>
+            <delete />
+          </value>
+        </item>
+        <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2500">
+          <value>
+            <delete />
+          </value>
+        </item>
+        <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2600">
+          <value>
+            <delete />
+          </value>
+        </item>
+        <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2700">
+          <value>
+            <delete />
+          </value>
+        </item>
+      </disabledList>
+      <elements>
+        <enum id="IZ_PartnameInternetZoneTemplate" valueName="Internet" required="true">
+          <item displayName="$(string.IZ_ItemnameLow)">
+            <value>
+              <decimal value="1" />
+            </value>
+            <valueList>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1001">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1004">
+                <value>
+                  <decimal value="1" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1200">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1201">
+                <value>
+                  <decimal value="1" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1206">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1207">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1208">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1209">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="120a">
+                <value>
+                  <decimal value="3" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="120b">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1400">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1402">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1405">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1406">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1407">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1409">
+                <value>
+                  <decimal value="3" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1601">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1604">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1605">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1606">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1607">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1608">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1609">
+                <value>
+                  <decimal value="1" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="160A">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1800">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1802">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1803">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1804">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1807">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1808">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1809">
+                <value>
+                  <decimal value="3" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="180a">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="180b">
+                <value>
+                  <decimal value="1" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1a00">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1a02">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1a03">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1a04">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1a05">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1a06">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1c00">
+                <value>
+                  <decimal value="196608" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1e05">
+                <value>
+                  <decimal value="196608" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2000">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2001">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2004">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2005">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2100">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2101">
+                <value>
+                  <decimal value="1" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2102">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2103">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2104">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2105">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2106">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2200">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2201">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2300">
+                <value>
+                  <decimal value="1" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2301">
+                <value>
+                  <decimal value="3" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2400">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2401">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2402">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2500">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2600">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2700">
+                <value>
+                  <decimal value="3" />
+                </value>
+              </item>
+            </valueList>
+          </item>
+          <item displayName="$(string.IZ_ItemnameMediumLow)">
+            <value>
+              <decimal value="2" />
+            </value>
+            <valueList>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1001">
+                <value>
+                  <decimal value="1" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1004">
+                <value>
+                  <decimal value="3" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1200">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1201">
+                <value>
+                  <decimal value="3" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1206">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1207">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1208">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1209">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="120a">
+                <value>
+                  <decimal value="3" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="120b">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1400">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1402">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1405">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1406">
+                <value>
+                  <decimal value="1" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1407">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1409">
+                <value>
+                  <decimal value="3" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1601">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1604">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1605">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1606">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1607">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1608">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1609">
+                <value>
+                  <decimal value="1" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="160A">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1800">
+                <value>
+                  <decimal value="1" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1802">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1803">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1804">
+                <value>
+                  <decimal value="1" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1807">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1808">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1809">
+                <value>
+                  <decimal value="3" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="180a">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="180b">
+                <value>
+                  <decimal value="1" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1a00">
+                <value>
+                  <decimal value="131072" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1a02">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1a03">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1a04">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1a05">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1a06">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1c00">
+                <value>
+                  <decimal value="131072" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1e05">
+                <value>
+                  <decimal value="131072" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2000">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2001">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2004">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2005">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2100">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2101">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2102">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2103">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2104">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2105">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2106">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2200">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2201">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2300">
+                <value>
+                  <decimal value="1" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2301">
+                <value>
+                  <decimal value="3" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2400">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2401">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2402">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2500">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2600">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2700">
+                <value>
+                  <decimal value="3" />
+                </value>
+              </item>
+            </valueList>
+          </item>
+          <item displayName="$(string.IZ_ItemnameMedium)">
+            <value>
+              <decimal value="3" />
+            </value>
+            <valueList>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1001">
+                <value>
+                  <decimal value="1" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1004">
+                <value>
+                  <decimal value="3" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1200">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1201">
+                <value>
+                  <decimal value="3" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1206">
+                <value>
+                  <decimal value="3" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1207">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1208">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1209">
+                <value>
+                  <decimal value="3" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="120a">
+                <value>
+                  <decimal value="3" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="120b">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1400">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1402">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1405">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1406">
+                <value>
+                  <decimal value="3" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1407">
+                <value>
+                  <decimal value="1" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1409">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1601">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1604">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1605">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1606">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1607">
+                <value>
+                  <decimal value="3" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1608">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1609">
+                <value>
+                  <decimal value="1" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="160A">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1800">
+                <value>
+                  <decimal value="1" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1802">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1803">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1804">
+                <value>
+                  <decimal value="1" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1807">
+                <value>
+                  <decimal value="1" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1808">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1809">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="180a">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="180b">
+                <value>
+                  <decimal value="1" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1a00">
+                <value>
+                  <decimal value="131072" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1a02">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1a03">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1a04">
+                <value>
+                  <decimal value="3" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1a05">
+                <value>
+                  <decimal value="1" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1a06">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1c00">
+                <value>
+                  <decimal value="65536" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="1e05">
+                <value>
+                  <decimal value="131072" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2000">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2001">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2004">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2005">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2100">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2101">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2102">
+                <value>
+                  <decimal value="3" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2103">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2104">
+                <value>
+                  <decimal value="3" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2105">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2106">
+                <value>
+                  <decimal value="0" />
+                </value>
+              </item>
+              <item key="Software\Policies\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3" valueName="2200">
+                <value>
+                  <decimal value="3" />
+                </value>
+  

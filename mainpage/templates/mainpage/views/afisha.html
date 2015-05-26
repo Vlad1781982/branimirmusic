@@ -1,0 +1,25 @@
+{% load staticfiles %}
+{% block CSS %}
+    <link rel="stylesheet" href="{% static 'mainpage/css/v-accordion.css' %}">
+{% endblock %}
+<h3>Выступления</h3>
+<style>
+   h3 {
+    font-family: Romul;
+   }
+  </style>
+{% verbatim %}
+<v-accordion class="vAccordion--default">
+
+  <v-pane ng-repeat="event in events" expanded="$first">
+    <v-pane-header>
+      {{ event.title }}
+    </v-pane-header>
+
+    <v-pane-content>
+      <p ng-bind-html="event.content"></p>
+    </v-pane-content>
+  </v-pane>
+
+</v-accordion>
+{% endverbatim %}

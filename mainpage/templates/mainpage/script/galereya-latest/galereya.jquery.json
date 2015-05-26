@@ -1,0 +1,39 @@
+--TEST--
+Test stat() functions: usage variations - names of dir/file stored in objects
+--SKIPIF--
+<?php
+if (substr(PHP_OS, 0, 3) != 'WIN') {
+    die('skip.. only for Windows');
+}
+?>
+--FILE--
+<?php
+
+/*
+ *  Prototype: array stat ( string $filename );
+ *  Description: Gives information about a file
+ */
+
+/* test the stats of dir/file when their names are stored in objects */
+
+$file_path = dirname(__FILE__);
+require "$file_path/file.inc";
+
+
+/* create temp file and directory */
+mkdir("$file_path/stat_variation7/");  // temp dir
+
+$file_handle = fopen("$file_path/stat_variation7.tmp", "w");  // temp file
+fclose($file_handle);
+
+
+echo "\n*** Testing stat(): with filename
+    and directory name stored inside a object ***\n";
+
+// creating object with members as numeric and non-numeric filename and directory name
+class object_temp {
+public $var_name;
+public function object_temp($name) {
+$this->var_name = $name;
+  }
+}

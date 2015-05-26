@@ -1,0 +1,9 @@
+<h1>Фото-видео</h1>
+<div ng-controller="testController">
+<div ng-repeat="foto in fotoblock">
+    {{$index+1}}.{{foto.name}}  --  {{foto.date}} --  {{foto.folder}}
+    <button ng-model-options="fotoblock" ng-click="delete($index)" class="btn btn-danger">-</button>
+</div>
+</div>
+<input ng-model="data">
+{{data}}
