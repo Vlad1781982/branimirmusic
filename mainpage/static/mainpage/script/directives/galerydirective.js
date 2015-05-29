@@ -4,7 +4,7 @@ app.directive('galery', function() {
         restrict: 'A',
         // responsible for registering DOM listeners as well as updating the DOM
         link: function(scope, element, attrs) {
-            $(element).galereya(scope.$eval(attrs.galery));
+            $(element).photobox(scope.$eval(attrs.galery));
         }
     };
 });

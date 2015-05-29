@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28b9421e-b4bd-484f-b28b-8d47ad41289d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mainpage/static/mainpage/script/vendor/align.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mainpage/static/mainpage/script/directives/aligndirective.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainpage/templates/mainpage/views/afisha.html" afterPath="$PROJECT_DIR$/mainpage/templates/mainpage/views/afisha.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainpage/static/mainpage/css/app.css" afterPath="$PROJECT_DIR$/mainpage/static/mainpage/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainpage/templates/mainpage/partials/disco.html" afterPath="$PROJECT_DIR$/mainpage/templates/mainpage/partials/disco.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainpage/templates/mainpage/index.html" afterPath="$PROJECT_DIR$/mainpage/templates/mainpage/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainpage/templates/mainpage/partials/main.html" afterPath="$PROJECT_DIR$/mainpage/templates/mainpage/partials/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainpage/models.py" afterPath="$PROJECT_DIR$/mainpage/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainpage/templates/mainpage/views/news.html" afterPath="$PROJECT_DIR$/mainpage/templates/mainpage/views/news.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainpage/templates/mainpage/views/vk.html" afterPath="$PROJECT_DIR$/mainpage/templates/mainpage/views/vk.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainpage/static/mainpage/script/galereya-latest/README.md" afterPath="$PROJECT_DIR$/mainpage/static/mainpage/script/galereya-latest/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainpage/static/mainpage/script/galereya-latest/img/galereya-slider-loader.gif" afterPath="$PROJECT_DIR$/mainpage/static/mainpage/script/galereya-latest/img/galereya-slider-loader.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainpage/templates/mainpage/partials/fvdetails.html" afterPath="$PROJECT_DIR$/mainpage/templates/mainpage/partials/fvdetails.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainpage/static/mainpage/script/directives/galerydirective.js" afterPath="$PROJECT_DIR$/mainpage/static/mainpage/script/directives/galerydirective.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainpage/static/mainpage/script/galereya-latest/css/jquery.galereya.css" afterPath="$PROJECT_DIR$/mainpage/static/mainpage/script/galereya-latest/css/jquery.galereya.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mainpage/static/mainpage/script/galereya-latest/js/jquery.galereya.js" afterPath="$PROJECT_DIR$/mainpage/static/mainpage/script/galereya-latest/js/jquery.galereya.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="branimirmusic.iws" />
@@ -113,16 +108,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mainpage/templates/mainpage/partials/main.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614">
-              <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="disco.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mainpage/templates/mainpage/partials/disco.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -155,21 +140,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fvdetails.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mainpage/templates/mainpage/views/fvdetails.html">
+      <file leaf-file-name="fvdetails.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mainpage/templates/mainpage/partials/fvdetails.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.33203125">
+              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fvdetails.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mainpage/templates/mainpage/partials/fvdetails.html">
+      <file leaf-file-name="galerydirective.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mainpage/static/mainpage/script/directives/galerydirective.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43164062">
-              <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -204,6 +189,8 @@
         <option value="$PROJECT_DIR$/mainpage/templates/mainpage/index.html" />
         <option value="$PROJECT_DIR$/mainpage/templates/mainpage/partials/disco.html" />
         <option value="$PROJECT_DIR$/mainpage/models.py" />
+        <option value="$PROJECT_DIR$/mainpage/static/mainpage/script/directives/galerydirective.js" />
+        <option value="$PROJECT_DIR$/mainpage/templates/mainpage/partials/fvdetails.html" />
       </list>
     </option>
   </component>
@@ -455,6 +442,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="partials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="branimirmusic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="branimirmusic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mainpage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mainpage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="script" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="directives" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1051,7 +1068,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="48" column="15" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="15" />
           <folding>
-            <element signature="e#24#52#0" expanded="true" />
+            <element signature="e#24#52#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1118,22 +1135,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainpage/static/mainpage/script/directives/audiodirective.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainpage/templates/mainpage/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.538462">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mainpage/templates/mainpage/views/disco.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1150,6 +1151,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mainpage/static/mainpage/script/directives/audiodirective.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mainpage/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1160,26 +1169,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainpage/templates/mainpage/partials/disco_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mainpage/templates/mainpage/views/fvdetails.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mainpage/static/mainpage/script/directives/aligndirective.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -1192,10 +1185,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mainpage/templates/mainpage/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.538462">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainpage/static/mainpage/script/directives/aligndirective.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainpage/static/mainpage/script/directives/galerydirective.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainpage/templates/mainpage/partials/disco_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1923075">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mainpage/templates/mainpage/partials/fvdetails.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43164062">
-          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.33203125">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
           <folding />
         </state>
       </provider>

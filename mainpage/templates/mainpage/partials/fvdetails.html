@@ -1,19 +1,15 @@
 {% load staticfiles %}
 {% block CSS %}
-<link rel="stylesheet" href="{% static 'mainpage/script/galereya-latest/css/jquery.galereya.css' %}">
+<link rel="stylesheet" href="{% static 'mainpage/script/photobox/photobox.css' %}">
 <link rel="stylesheet" href="{% static 'mainpage/script/galereya-latest/css/jquery.galereya.ie.css' %}">
 {% endblock %}
 {% verbatim %}
-<div ng-app="myApp" >
-<h1 ng-repeat="foto in fotos">{{foto.file}}</h1></div>
-
-<div id="galleryherepls" galery="" ng-repeat="foto in fotos">
-    <img ng-src="/files/media/{{ foto.file}}"
-         alt="Image"
-         data-desc="Example"
-         data-fullsrc="/files/media/{{ foto.file }}"/>
-    </div>
+<div galery="">
+    <a ng-repeat="foto in fotos" ng-href="/files/media/{{ foto.image }}">
+        <img ng-src="/files/media/{{ foto.thumbnail}}"
+            title="photo1 title">
+    </a>
 {% endverbatim %}
 {% block ExtraJS %}
-   <script src="{% static 'mainpage/script/galereya-latest/js/jquery.galereya.js' %}"></script>
+   <script src="{% static 'mainpage/script/photobox/jquery.photobox.js' %}"></script>
 {% endblock %}
