@@ -162,6 +162,7 @@ nav ul ul ul {
   float:left;
   width: 20%;
   margin:5px;
+  padding:10px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   display: table-cell;
 

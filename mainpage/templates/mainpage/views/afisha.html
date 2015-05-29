@@ -1,7 +1,3 @@
-{% load staticfiles %}
-{% block CSS %}
-    <link rel="stylesheet" href="{% static 'mainpage/css/v-accordion.css' %}">
-{% endblock %}
 <h3>Выступления</h3>
 <style>
    h3 {
@@ -11,7 +7,7 @@
 {% verbatim %}
 <v-accordion class="vAccordion--default">
 
-  <v-pane ng-repeat="event in events" expanded="$first">
+  <v-pane ng-repeat="event in events|orderBy:'created'" expanded="$first">
     <v-pane-header>
       {{ event.title }}
     </v-pane-header>
