@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 from djangular.views.crud import NgCRUDView
 from imagekit.models import ProcessedImageField
@@ -33,7 +32,7 @@ class AlbumsCRUDView(NgCRUDView):
 
 class Audio(models.Model):
     file = models.FileField('Трек',upload_to='audio/')
-    albums = models.ForeignKey('Albums', blank=True, null=True)
+    albums = models.ForeignKey('Albums')
 
     def __unicode__(self):
         return u'%s' %self.filename

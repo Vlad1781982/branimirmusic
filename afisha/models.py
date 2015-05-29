@@ -1,13 +1,8 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-from imagekit.models import ImageSpecField
-from imagekit.processors import ResizeToFill
 from djangular.views.crud import NgCRUDView
-from sorl.thumbnail import ImageField
-from django.contrib import admin
 from ckeditor.fields import RichTextField
-from django.conf import settings
-from imagekit.models import ProcessedImageField
+
 
 # Create your models here.
 

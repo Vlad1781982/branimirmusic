@@ -8,13 +8,7 @@ from afisha.models import AfishaCRUDView
 from albums.models import AlbumsCRUDView, AudioCrudView
 from django.views.generic import TemplateView
 from django.contrib import admin
-from tastypie.api import Api
-from branimir.api import GalleryResource,ImageResource
 from django.contrib import admin
-
-v1_api=Api(api_name='v1')
-v1_api.register(GalleryResource())
-v1_api.register(ImageResource())
 
 urlpatterns = patterns('',
     # Examples:
@@ -38,7 +32,6 @@ urlpatterns = patterns('',
     url(r'^crud/afisha/?$', AfishaCRUDView.as_view(), name='my_afisha_view'),
     url(r'^crud/albums/?$', AlbumsCRUDView.as_view(), name='my_albums_view'),
     url(r'^crud/audio/?$', AudioCrudView.as_view(), name='my_audio_view'),
-    url(r'^api/', include(v1_api.urls)),
     url(r'^ckeditor/', include('ckeditor.urls')),
 )
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
