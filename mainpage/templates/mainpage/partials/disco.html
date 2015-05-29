@@ -8,7 +8,7 @@
 {% verbatim %}
 <div ng-repeat="album in albums|orderBy:'- datev'" id="album_div">
     <div class="album_picture">
-       <a href="#/discography/{{ album.pk }}"><img class="animated fadeIn" src="/files/media/{{album.photo_thumb}}"></a>
+       <a href="#/discography/{{ album.pk }}"><img class="animated fadeIn" ng-src="/files/media/{{album.photo_thumb}}"></a>
     </div>
     <div class="album_content">
        <div class="album_title">
