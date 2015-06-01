@@ -1,0 +1,18 @@
+{% load staticfiles %}
+{% block CSS %}
+ <link rel="stylesheet" href="{% static 'mainpage/css/youtube-video-gallery-legacy-ie.css' %}">
+ <link rel="stylesheet" href="{% static 'mainpage/css/youtube-video-gallery.css' %}">
+{% endblock %}
+
+<ul videodir="" class="youtube-videogallery">
+    <li ng-repeat="video in videos"><a ng-href="{{ video.videourl }}">{{ video.title }}</a></li>
+</ul>
+
+{% block ExtraJS %}
+   <script src="{% static 'mainpage/script/jquery.youtubevideogallery.js' %}"></script>
+{% endblock %}
+<script>
+    $(document).ready(function(){
+    $("ul.youtube-videogallery").youtubeVideoGallery();
+});
+</script>

@@ -129,6 +129,21 @@ nav ul ul ul {
   padding:10px;
 }
 
+.fotodiv {
+  float: left;
+  width: 49%;
+  margin: 7px;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.videodiv {
+  float: left;
+  width: 49%;
+  margin: 7px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 300px;
+}
+
 .audio_wrapper {
   margin:10px;
   padding:10px;

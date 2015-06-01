@@ -46,3 +46,9 @@ def vk(request):
     return render(request,'mainpage/views/vk.html')
 def discodetail(request):
     return render(request, 'mainpage/partials/disco_detail.html')
+
+def foto(request):
+    return render(request, 'mainpage/partials/foto.html')
+
+def video(request):
+    return render(request, 'mainpage/partials/video.html')

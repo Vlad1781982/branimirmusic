@@ -113,3 +113,21 @@ class ImgCrudView(NgCRUDView):
 
 class GalleryAdmin(admin.ModelAdmin):
     exclude = ('slug',)
+
+class ImageAdmin(admin.ModelAdmin):
+    exclude = ('thumbnail',)
+
+class Video(models.Model):
+    title = models.CharField('Название', max_length=200)
+    videourl=models.URLField('Адрес видео YouTube', max_length=300)
+    created = models.DateTimeField(verbose_name='Создано',auto_now=True)
+
+    def __unicode__(self):
+        return u'%s' %self.title
+
+    class Meta:
+        verbose_name= 'Ролик'
+        verbose_name_plural = 'Ролики'
+
+class VideoCrudView(NgCRUDView):
+    model=Video

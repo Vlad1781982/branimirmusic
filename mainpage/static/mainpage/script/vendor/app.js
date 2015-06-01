@@ -85,21 +85,41 @@ app.config(function(RestangularProvider, $stateProvider, $urlRouterProvider,pagi
     })
     .state('foto-video', {
            url:"/foto-video",
-           templateUrl:'/partials/foto-video.html',
-           controller:fvCtrl
+           views:{
+                '@':{
+                   templateUrl:'/partials/foto-video.html'
+                },
+                'left@foto-video':{
+                    templateUrl:'/partials/foto.html',
+                    controller:fvCtrl
+                             },
+                'right@foto-video':{
+                    templateUrl:'/partials/video.html'},
+                    controller:videoCtrl
+            }
     })
 
         .state('details',{
             url:'/foto-video/:pk',
-            templateUrl:'/partials/fvdetails.html',
-            controller: function ($scope, Restangular,$sanitize,$stateParams) {
+            views:{
+                '@':{
+                   templateUrl:'/partials/foto-video.html'
+                },
+                'left@details':{
+                    templateUrl:'/partials/fvdetails.html',
+                    controller:function ($scope, Restangular,$sanitize,$stateParams) {
                     var slugy=$stateParams.pk;
                     console.log(slugy);
                     Restangular.all("image/").getList().then(function(data){
                     $scope.fotos=_.filter(data,{'gallery':slugy});
                         console.log($scope.fotos);
     });}
-        })
+                             },
+                'right@fdetails':{
+                    templateUrl:'/partials/video.html',
+                    controller:videoCtrl
+                }
+            }})
 
     .state('admin', {
            url:"/admin",
@@ -125,3 +145,7 @@ function albumsCtrl($scope, Restangular,$sanitize) {
 function fvCtrl($scope, Restangular,$sanitize) {
     $scope.models = Restangular.all("gallery/").getList().$object;
     $scope.fotosq = Restangular.all("image").getList().$object;}
+
+function videoCtrl($scope, Restangular,$sanitize) {
+    $scope.videos = Restangular.all("video/").getList().$object;}
+

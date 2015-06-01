@@ -2,7 +2,7 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 from django.conf.urls import patterns, include, url
-from mainpage.models import MyCRUDView,ImgCrudView
+from mainpage.models import MyCRUDView,ImgCrudView, VideoCrudView
 from news.models import NewsCRUDView
 from afisha.models import AfishaCRUDView
 from albums.models import AlbumsCRUDView, AudioCrudView
@@ -24,10 +24,13 @@ urlpatterns = patterns('',
     url(r'^partials/bio.html$','mainpage.views.bio'),
     url(r'^partials/disco.html$','mainpage.views.disco'),
     url(r'^partials/disco_detail.html$','mainpage.views.discodetail'),
+    url(r'^partials/foto.html$','mainpage.views.foto'),
+    url(r'^partials/video.html$','mainpage.views.video'),
     url(r'^partials/fvdetails.html$','mainpage.views.fvdetails'),
     url(r'^admin_tools/', include('admin_tools.urls')),
     url(r'^crud/gallery/?$', MyCRUDView.as_view(), name='my_gallery_view'),
     url(r'^crud/image/?$', ImgCrudView.as_view(), name='my_image_view'),
+    url(r'^crud/video/?$', VideoCrudView.as_view(), name='my_video_view'),
     url(r'^crud/news/?$', NewsCRUDView.as_view(), name='my_news_view'),
     url(r'^crud/afisha/?$', AfishaCRUDView.as_view(), name='my_afisha_view'),
     url(r'^crud/albums/?$', AlbumsCRUDView.as_view(), name='my_albums_view'),
